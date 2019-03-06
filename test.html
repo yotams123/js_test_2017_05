@@ -1,17 +1,19 @@
 <html>
 <head>
     <script>
+
         function calculate() {
-            var zkm_flying = ________________;
-            var zkm_water = ________________;
-            var zkm_steel = ________________;
-            var total;
-            if ________________ {
+            var zkm_flying = document.getElementById("flying").value;
+            var zkm_water = document.getElementById("water").value;
+            var zkm_steel = document.getElementById("steel").value;
+            var total = (100 * parseInt(zkm_flying)) + (50 * parseInt(zkm_water)) + (150 * parseInt(zkm_steel));
+            if ((total>2000) && (zkm_steel>6)) {
                 document.getElementById("com").value = "advanced level";
 
             }else {
                 document.getElementById("com").value = "basic level";
             }
+            document.getElementById("points").value=total;
 
         }
     </script>
@@ -22,7 +24,7 @@ flying zokimon <input type="text" id="flying" value="" size="4">
 water zokimon <input type="text" id="water" value="" size="4">
 steel zokimon <input type="text" id="steel" value="" size="4">
 <br/>
-<input type="button" id="calc" value="calculation" onclick="">
+<input type="button" id="calc" value="calculation" onclick="calculate()">
 <br/>
 final points <input type="text" id="points" value="" size="4">
 
